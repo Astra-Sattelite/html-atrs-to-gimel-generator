@@ -107,7 +107,7 @@ allHtmlAttributes =
 
 
 generateAtrs : HtmlAttributes -> IO ()
-generateAtrs allAtrs = ignore $ writeFile "./testFile" $ atrsToCode allAtrs
+generateAtrs allAtrs = ignore $ writeFile "./generatedAtrs" $ atrsToCode allAtrs
 
 main : IO ()
 main = generateAtrs allHtmlAttributes
