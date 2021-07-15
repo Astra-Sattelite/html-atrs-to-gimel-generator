@@ -1,0 +1,10 @@
+package: idrisGenerator
+version: 0.0.1
+
+depends:
+- contrib
+
+# sources:
+# - name: some-package
+#   url: https://github.com/SomeAuthor/some-repository
+#   version: v0.0.1

@@ -1,0 +1,19 @@
+export
+style : String -> Attribute event
+style = ("style" =:)
+
+export
+id : String -> Attribute event
+id = ("id" =:)
+
+export
+className : String -> Attribute event
+className = ("className" =:)
+
+export
+onClick : event -> Attribute event
+onClick = eventAttribute "onClick" $ MkCmd ($ event)
+
+export
+onInput : (String -> event) -> Attribute event
+onInput = stringEvent "onInput"
