@@ -53,13 +53,55 @@ allHtmlAttributes =
                 , "id"
                 , "className"
                 ]
-        , onAttributes 
-            = 
+        , onAttributes
+            =
                 [ "onClick"
+                , "onBlur"
+                , "onFocus"
+                , "onInvalid" 
+                , "onReset"
+                , "onSubmit"
+                , "onError"
+                , "onLoad"
+                , "onContextMenu"
+                , "onDoubleClick"
+                , "onDrag"
+                , "onDragEnd"
+                , "onDragEnter"
+                , "onDragExit"
+                , "onDragLeave"
+                , "onDragOver"
+                , "onDragStart"
+                , "onDrop"
+                , "onMouseDown"
+                , "onMouseEnter"
+                , "onMouseLeave"
+                , "onMouseMove"
+                , "onMouseOut"
+                , "onMouseOver"
+                , "onMouseUp"
+                , "onPointerDown" 
+                , "onPointerMove" 
+                , "onPointerUp" 
+                , "onPointerCancel" 
+                , "onGotPointerCapture"
+                , "onLostPointerCapture" 
+                , "onPointerEnter" 
+                , "onPointerLeave" 
+                , "onPointerOver" 
+                , "onPointerOut"
+                , "onSelect"
+                , "onTouchCancel" 
+                , "onTouchEnd" 
+                , "onTouchMove" 
+                , "onTouchStart"
+                , "onScroll"
+                , "onWheel"
                 ]
         , onAttributesWithVal 
             = 
-                ["onInput"
+                [ "onInput"
+                , "onChange"
                 ]
         }
 

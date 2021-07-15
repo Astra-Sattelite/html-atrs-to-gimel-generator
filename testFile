@@ -15,5 +15,173 @@ onClick : event -> Attribute event
 onClick = eventAttribute "onClick" $ MkCmd ($ event)
 
 export
+onBlur : event -> Attribute event
+onBlur = eventAttribute "onBlur" $ MkCmd ($ event)
+
+export
+onFocus : event -> Attribute event
+onFocus = eventAttribute "onFocus" $ MkCmd ($ event)
+
+export
+onInvalid : event -> Attribute event
+onInvalid = eventAttribute "onInvalid" $ MkCmd ($ event)
+
+export
+onReset : event -> Attribute event
+onReset = eventAttribute "onReset" $ MkCmd ($ event)
+
+export
+onSubmit : event -> Attribute event
+onSubmit = eventAttribute "onSubmit" $ MkCmd ($ event)
+
+export
+onError : event -> Attribute event
+onError = eventAttribute "onError" $ MkCmd ($ event)
+
+export
+onLoad : event -> Attribute event
+onLoad = eventAttribute "onLoad" $ MkCmd ($ event)
+
+export
+onContextMenu : event -> Attribute event
+onContextMenu = eventAttribute "onContextMenu" $ MkCmd ($ event)
+
+export
+onDoubleClick : event -> Attribute event
+onDoubleClick = eventAttribute "onDoubleClick" $ MkCmd ($ event)
+
+export
+onDrag : event -> Attribute event
+onDrag = eventAttribute "onDrag" $ MkCmd ($ event)
+
+export
+onDragEnd : event -> Attribute event
+onDragEnd = eventAttribute "onDragEnd" $ MkCmd ($ event)
+
+export
+onDragEnter : event -> Attribute event
+onDragEnter = eventAttribute "onDragEnter" $ MkCmd ($ event)
+
+export
+onDragExit : event -> Attribute event
+onDragExit = eventAttribute "onDragExit" $ MkCmd ($ event)
+
+export
+onDragLeave : event -> Attribute event
+onDragLeave = eventAttribute "onDragLeave" $ MkCmd ($ event)
+
+export
+onDragOver : event -> Attribute event
+onDragOver = eventAttribute "onDragOver" $ MkCmd ($ event)
+
+export
+onDragStart : event -> Attribute event
+onDragStart = eventAttribute "onDragStart" $ MkCmd ($ event)
+
+export
+onDrop : event -> Attribute event
+onDrop = eventAttribute "onDrop" $ MkCmd ($ event)
+
+export
+onMouseDown : event -> Attribute event
+onMouseDown = eventAttribute "onMouseDown" $ MkCmd ($ event)
+
+export
+onMouseEnter : event -> Attribute event
+onMouseEnter = eventAttribute "onMouseEnter" $ MkCmd ($ event)
+
+export
+onMouseLeave : event -> Attribute event
+onMouseLeave = eventAttribute "onMouseLeave" $ MkCmd ($ event)
+
+export
+onMouseMove : event -> Attribute event
+onMouseMove = eventAttribute "onMouseMove" $ MkCmd ($ event)
+
+export
+onMouseOut : event -> Attribute event
+onMouseOut = eventAttribute "onMouseOut" $ MkCmd ($ event)
+
+export
+onMouseOver : event -> Attribute event
+onMouseOver = eventAttribute "onMouseOver" $ MkCmd ($ event)
+
+export
+onMouseUp : event -> Attribute event
+onMouseUp = eventAttribute "onMouseUp" $ MkCmd ($ event)
+
+export
+onPointerDown : event -> Attribute event
+onPointerDown = eventAttribute "onPointerDown" $ MkCmd ($ event)
+
+export
+onPointerMove : event -> Attribute event
+onPointerMove = eventAttribute "onPointerMove" $ MkCmd ($ event)
+
+export
+onPointerUp : event -> Attribute event
+onPointerUp = eventAttribute "onPointerUp" $ MkCmd ($ event)
+
+export
+onPointerCancel : event -> Attribute event
+onPointerCancel = eventAttribute "onPointerCancel" $ MkCmd ($ event)
+
+export
+onGotPointerCapture : event -> Attribute event
+onGotPointerCapture = eventAttribute "onGotPointerCapture" $ MkCmd ($ event)
+
+export
+onLostPointerCapture : event -> Attribute event
+onLostPointerCapture = eventAttribute "onLostPointerCapture" $ MkCmd ($ event)
+
+export
+onPointerEnter : event -> Attribute event
+onPointerEnter = eventAttribute "onPointerEnter" $ MkCmd ($ event)
+
+export
+onPointerLeave : event -> Attribute event
+onPointerLeave = eventAttribute "onPointerLeave" $ MkCmd ($ event)
+
+export
+onPointerOver : event -> Attribute event
+onPointerOver = eventAttribute "onPointerOver" $ MkCmd ($ event)
+
+export
+onPointerOut : event -> Attribute event
+onPointerOut = eventAttribute "onPointerOut" $ MkCmd ($ event)
+
+export
+onSelect : event -> Attribute event
+onSelect = eventAttribute "onSelect" $ MkCmd ($ event)
+
+export
+onTouchCancel : event -> Attribute event
+onTouchCancel = eventAttribute "onTouchCancel" $ MkCmd ($ event)
+
+export
+onTouchEnd : event -> Attribute event
+onTouchEnd = eventAttribute "onTouchEnd" $ MkCmd ($ event)
+
+export
+onTouchMove : event -> Attribute event
+onTouchMove = eventAttribute "onTouchMove" $ MkCmd ($ event)
+
+export
+onTouchStart : event -> Attribute event
+onTouchStart = eventAttribute "onTouchStart" $ MkCmd ($ event)
+
+export
+onScroll : event -> Attribute event
+onScroll = eventAttribute "onScroll" $ MkCmd ($ event)
+
+export
+onWheel : event -> Attribute event
+onWheel = eventAttribute "onWheel" $ MkCmd ($ event)
+
+export
 onInput : (String -> event) -> Attribute event
 onInput = stringEvent "onInput"
+
+export
+onChange : (String -> event) -> Attribute event
+onChange = stringEvent "onChange"
