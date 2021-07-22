@@ -3,18 +3,23 @@ module Main
 import System.File
 import Data.String.Extra
 
+record SimpleHtmlAtr where
+    constructor MkSimpleHtmlAtr
+    name : String
+    type : String
+
 record HtmlAttributes where
     constructor MkHtmlAttributes
-    simpleAttributes : List String
+    simpleAttributes : List SimpleHtmlAtr
     onAttributes : List String
     onAttributesWithVal : List String
 
-simpleAtrNameToCode : String -> String
-simpleAtrNameToCode atr = 
+simpleAtrNameToCode : SimpleHtmlAtr -> String
+simpleAtrNameToCode simpleAtr =
 """
 export
-\{atr} : String -> Attribute event
-\{atr} = ("\{atr}" =:)
+\{simpleAtr.name} : \{simpleAtr.type} -> Attribute event
+\{simpleAtr.name} = ("\{simpleAtr.name}" =:)
 """
 
 onAtrNameToCode : String -> String
@@ -48,22 +53,33 @@ allHtmlAttributes : HtmlAttributes
 allHtmlAttributes = 
     MkHtmlAttributes 
         { simpleAttributes 
-            = 
-                [ "style"
-                , "id"
-                , "className"
+            =
+                [ -- GLOBAL ATRS!
+                  MkSimpleHtmlAtr { name = "className", type = "String" }
+                , MkSimpleHtmlAtr { name = "accessKey", type = "Char" }
+                , MkSimpleHtmlAtr { name = "contenteditable", type = "Bool" }
+                , MkSimpleHtmlAtr { name = "dir", type = "String" } -- Need Custom Type
+                , MkSimpleHtmlAtr { name = "draggable", type = "Bool" }
+                , MkSimpleHtmlAtr { name = "hidden", type = "Bool" }
+                , MkSimpleHtmlAtr { name = "id", type = "String" }
+                , MkSimpleHtmlAtr { name = "lang", type = "String" } -- Need Custom Type
+                , MkSimpleHtmlAtr { name = "spellCheck", type = "Bool" }
+                , MkSimpleHtmlAtr { name = "style", type = "Object" }
+                , MkSimpleHtmlAtr { name = "tabIndex", type = "Int" }
+                , MkSimpleHtmlAtr { name = "title", type = "String" }
+                -- ATRS!
+                , MkSimpleHtmlAtr { name = "accept", type = "String" } -- Need Custom Type
+                , MkSimpleHtmlAtr { name = "charset", type = "String" } -- Need Custom Type
                 ]
+
         , onAttributes
             =
                 [ "onClick"
                 , "onBlur"
-                , "onFocus"
-                , "onInvalid" 
+                , "onFocus" 
                 , "onReset"
                 , "onSubmit"
-                , "onError"
                 , "onLoad"
-                , "onContextMenu"
                 , "onDoubleClick"
                 , "onDrag"
                 , "onDragEnd"
@@ -72,7 +88,6 @@ allHtmlAttributes =
                 , "onDragLeave"
                 , "onDragOver"
                 , "onDragStart"
-                , "onDrop"
                 , "onMouseDown"
                 , "onMouseEnter"
                 , "onMouseLeave"
@@ -97,13 +112,36 @@ allHtmlAttributes =
                 , "onTouchStart"
                 , "onScroll"
                 , "onWheel"
+                , "onAfterPrint"
+                , "onBeforePrint"
+                , "onBeforeUnload"
+                , "onMessage"
+                , "onOffline"
+                , "onOnline"
+                , "onPageHide"
+                , "onPageShow"
+                , "onResize"
+                , "onUnload"
                 ]
-        , onAttributesWithVal 
+        , onAttributesWithVal
             = 
                 [ "onInput"
                 , "onChange"
+                , "onInvalid"
+                , "onContextMenu"
+                , "onDrop"
+                , "onPopState"
+                , "onStorage"
                 ]
         }
+
+qustionableAtrs : List String
+qustionableAtrs = 
+    [ "onError"
+    , "onHashChange"
+    , "data-*"
+    , "translate" -- No Browser support
+    ]
 
 
 generateAtrs : HtmlAttributes -> IO ()
